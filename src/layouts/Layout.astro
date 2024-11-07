@@ -1,6 +1,5 @@
 ---
 import Header from "../components/Header.astro";
-import Navbar from "../components/NavBar.astro";
 interface Props {
   title: string;
 }
@@ -19,12 +18,333 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="font-mono">
+    <div class="background-container" id="background">
+      <div class="gridBox"></div>
+    </div>
     <Header />
     <slot />
   </body>
 </html>
 <style is:global>
+  :root {
+    /* Catppuccin Mocha Palette */
+    --ctp-base: #1e1e2e;
+    --ctp-surface0: #313244;
+    --ctp-surface1: #45475a;
+    --ctp-text: #cdd6f4;
+    --ctp-rosewater: #f5e0dc;
+    --ctp-flamingo: #f2cdcd;
+
+    --ctp-pink: #f5c2e7;
+    --ctp-mauve: #cba6f7;
+    --ctp-red: #f38ba8;
+    --ctp-maroon: #eba0ac;
+    --ctp-peach: #fab387;
+    --ctp-yellow: #f9e2af;
+    --ctp-green: #a6e3a1;
+    --ctp-teal: #94e2d5;
+    --ctp-sky: #89dceb;
+    --ctp-sapphire: #74c7ec;
+    --ctp-blue: #89b4fa;
+    --ctp-lavender: #b4befe;
+  }
+
   * {
     color-scheme: dark;
   }
+
+  body {
+    margin: 0;
+    background: var(--ctp-base);
+    font-family: "Courier New", monospace;
+  }
+
+  .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .gridBox {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    background-image: linear-gradient(var(--ctp-surface0) 1px, transparent 1px),
+      linear-gradient(90deg, var(--ctp-surface0) 1px, transparent 1px);
+    background-size: 30px 30px;
+    animation: gridMove 20s linear infinite;
+    opacity: 0.3;
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translate(0, 0);
+    }
+
+    100% {
+      transform: translate(-30px, -30px);
+    }
+  }
+
+  .particle {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: var(--ctp-mauve);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: float 6s infinite;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: translate(10px, -10px) scale(1.5);
+      opacity: 0.8;
+    }
+  }
+
+  .connection {
+    position: absolute;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--ctp-lavender),
+      transparent
+    );
+    opacity: 0;
+    transform-origin: left;
+
+    animation: connect 4s infinite;
+  }
+
+  @keyframes connect {
+    0% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    50% {
+      opacity: 0.5;
+
+      transform: scaleX(1);
+    }
+    100% {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+  }
+
+  .hexagon {
+    position: absolute;
+    width: 60px;
+    height: 35px;
+    background: rgba(203, 166, 247, 0.1); /* Mauve with opacity */
+    position: relative;
+
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    animation: pulse 4s infinite;
+  }
+
+  .hexagon::after {
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background: var(--ctp-base);
+    clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+
+    opacity: 0.7;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.5;
+    }
+  }
+
+  .code-rain {
+    position: absolute;
+    color: var(--ctp-surface1);
+    font-size: 14px;
+
+    white-space: nowrap;
+    animation: rain linear infinite;
+
+    text-shadow: 0 0 5px var(--ctp-mauve);
+  }
+
+  @keyframes rain {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    30% {
+      opacity: 0.3;
+    }
+    70% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: translateY(100vh);
+      opacity: 0;
+    }
+  }
+
+  .glow {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(
+      circle,
+      rgba(203, 166, 247, 0.1) 0%,
+      transparent 70%
+    );
+
+    animation: moveGlow 8s infinite;
+    filter: blur(20px);
+  }
+
+  .accent-glow {
+    position: absolute;
+    width: 100px;
+
+    height: 100px;
+
+    background: radial-gradient(circle, var(--ctp-pink) 0%, transparent 70%);
+    opacity: 0.1;
+    animation: accentPulse 6s infinite;
+    filter: blur(15px);
+  }
+
+  @keyframes moveGlow {
+    0%,
+    100% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(30px, 30px);
+    }
+  }
+
+  @keyframes accentPulse {
+    0%,
+    100% {
+      transform: scale(1);
+      opacity: 0.05;
+    }
+
+    50% {
+      transform: scale(1.5);
+      opacity: 0.1;
+    }
+  }
 </style>
+<script>
+  const background = document.getElementById("background");
+  const codeCharacters = "01アイウエオカキクケコサシスセソタチツテトナニヌネノ";
+  const colors = [
+    "var(--ctp-mauve)",
+    "var(--ctp-blue)",
+    "var(--ctp-lavender)",
+    "var(--ctp-sapphire)",
+  ];
+
+  function createParticles(count) {
+    for (let i = 0; i < count; i++) {
+      const particle = document.createElement("div");
+
+      particle.className = "particle";
+      particle.style.left = `${Math.random() * 100}%`;
+      particle.style.top = `${Math.random() * 100}%`;
+      particle.style.animationDelay = `${Math.random() * 6}s`;
+      particle.style.background =
+        colors[Math.floor(Math.random() * colors.length)];
+      background.appendChild(particle);
+    }
+  }
+
+  function createHexagons(count) {
+    for (let i = 0; i < count; i++) {
+      const hexagon = document.createElement("div");
+      hexagon.className = "hexagon";
+      hexagon.style.left = `${Math.random() * 100}%`;
+      hexagon.style.top = `${Math.random() * 100}%`;
+      hexagon.style.animationDelay = `${Math.random() * 4}s`;
+
+      background.appendChild(hexagon);
+    }
+  }
+
+  function createCodeRain() {
+    setInterval(() => {
+      const rain = document.createElement("div");
+      rain.className = "code-rain";
+
+      rain.style.left = `${Math.random() * 100}%`;
+      rain.style.animationDuration = `${Math.random() * 3 + 2}s`;
+
+      let text = "";
+      for (let i = 0; i < 10; i++) {
+        text +=
+          codeCharacters[Math.floor(Math.random() * codeCharacters.length)];
+      }
+      rain.textContent = text;
+
+      background.appendChild(rain);
+      setTimeout(() => rain.remove(), 5000);
+    }, 100);
+  }
+
+  function createConnections() {
+    setInterval(() => {
+      const connection = document.createElement("div");
+      connection.className = "connection";
+      connection.style.left = `${Math.random() * 100}%`;
+      connection.style.top = `${Math.random() * 100}%`;
+      connection.style.width = `${Math.random() * 100 + 50}px`;
+      connection.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+      background.appendChild(connection);
+      setTimeout(() => connection.remove(), 4000);
+    }, 200);
+  }
+
+  function createGlows(count) {
+    for (let i = 0; i < count; i++) {
+      const glow = document.createElement("div");
+
+      glow.className = "glow";
+      glow.style.left = `${Math.random() * 100}%`;
+      glow.style.top = `${Math.random() * 100}%`;
+      glow.style.animationDelay = `${Math.random() * 8}s`;
+      background.appendChild(glow);
+
+      const accentGlow = document.createElement("div");
+      accentGlow.className = "accent-glow";
+      accentGlow.style.left = `${Math.random() * 100}%`;
+      accentGlow.style.top = `${Math.random() * 100}%`;
+      accentGlow.style.animationDelay = `${Math.random() * 6}s`;
+      background.appendChild(accentGlow);
+    }
+  }
+
+  createParticles(30);
+  createHexagons(15);
+  createCodeRain();
+  createConnections();
+  createGlows(5);
+</script>
