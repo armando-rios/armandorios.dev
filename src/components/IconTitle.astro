@@ -1,11 +1,11 @@
 ---
 import { Icon } from "astro-icon/components";
-const { iconName, title } = Astro.props
-console.log("Works")
+const { iconName, iconColor = "text-blue", title } = Astro.props;
 ---
+
 <div class="flex items-center text-2xl font-bold gap-4">
-    <div class="bg-surface0 p-2 rounded-lg w-fit">
-        <Icon name={iconName} class="text-3xl text-blue" />
-    </div>
-    <p>{title}</p>
+  <div class="bg-surface0 p-2 rounded-lg w-fit">
+    <Icon name={iconName} class=`text-3xl ${iconColor}` />
+  </div>
+  <p>{title}</p>
 </div>
