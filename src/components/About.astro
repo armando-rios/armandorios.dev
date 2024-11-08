@@ -1,19 +1,16 @@
 ---
-import { Icon } from "astro-icon/components";
-import IconTitle from "./IconTitle.astro"
+import IconTitle from "./IconTitle.astro";
 ---
 
-<main class="p-10 w-[1050px] flex flex-col gap-4">
-  <IconTitle title="About Me" iconName="user">
-    <div class="flex items-center text-2xl font-bold gap-4">
-        <IconTitle iconName="user" title="About Me" />
-    </div>
-    <p
-      class="px-10 py-6 text-lg border border-surface1 bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext"
-    >
-      Hi, I'm Armando Rios, a passionate Full Stack Developer who loves crafting
-      elegant solutions to complext problems. I spacialize in building scalable
-      web applications with modern technologies.
-    </p>
-  </IconTitle>
+<main class="flex flex-col gap-4">
+  <div class="flex items-center text-2xl font-bold gap-4">
+    <IconTitle iconName="user" title="About Me" />
+  </div>
+  <p
+    class="px-16 py-6 text-lg border border-surface1 text-balance w-[60%] bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext"
+  >
+    Hi, I'm Armando Rios, a passionate Full Stack Developer who loves crafting
+    elegant solutions to complext problems. I spacialize in building scalable
+    web applications with modern technologies.
+  </p>
 </main>
