@@ -1,8 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
+import Skills from "../components/Skills.astro";
+import Projects from "../components/Projects.astro";
+import DevTools from "../components/DevTools.astro";
 ---
 
 <Layout title="Armando Rios | Frontend Developer">
-  <About />
+  <div class="p-10 flex flex-col gap-12">
+    <About />
+    <Projects />
+    <Skills />
+    <DevTools />
+  </div>
 </Layout>
