@@ -7,5 +7,5 @@ const { iconName, iconColor = "text-blue", title } = Astro.props;
   <div class="bg-surface0 p-2 rounded-lg w-fit">
     <Icon name={iconName} class=`text-3xl ${iconColor}` />
   </div>
-  <p>{title}</p>
+  <p class={iconColor}>{title}</p>
 </div>
