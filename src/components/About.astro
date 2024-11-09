@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import IconTitle from "./IconTitle.astro";
 ---
 
@@ -7,10 +8,28 @@ import IconTitle from "./IconTitle.astro";
     <IconTitle iconName="user" title="About Me" />
   </div>
   <p
-    class="px-16 py-6 text-lg border border-surface1 text-balance w-[60%] bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext"
+    class="px-16 py-6 text-lg text-balance w-[60%] p-4 rounded-lg text-subtext"
   >
     Hi, I'm Armando Rios, a passionate Full Stack Developer who loves crafting
     elegant solutions to complext problems. I spacialize in building scalable
     web applications with modern technologies.
   </p>
+  <div class="flex gap-6 text-3xl px-16 text-subtext">
+    <a href=""
+      ><Icon name="github" class="text-mauve hover:scale-125 duration-300" /></a
+    >
+    <a href=""
+      ><Icon name="discord" class="text-blue hover:scale-125 duration-300" /></a
+    >
+    <a href=""
+      ><Icon
+        name="linkeding"
+        class="text-sky hover:scale-125 duration-300"
+      /></a
+    >
+    <a href=""
+      ><Icon name="x" class="text-green hover:scale-125 duration-300" /></a
+    >
+  </div>
 </main>
+<!-- class="px-16 py-6 text-lg border border-surface1 text-balance w-[60%] bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext" -->
