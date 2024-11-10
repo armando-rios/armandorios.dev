@@ -2,7 +2,9 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<header class="flex items-center justify-between border-b px-4 py-4">
+<header
+  class="fixed top-0 left-0 right-0 m-auto lg:w-[900px] xl:w-[1200px] h-20 flex items-center justify-between border-b mb-10"
+>
   <div class="flex text-2xl gap-2">
     <Icon name="terminal" class="text-mauve text-4xl" />
     <div class="flex text-3xl font-semibold"><h1>Armando Rios</h1></div>
@@ -15,3 +17,4 @@ import { Icon } from "astro-icon/components";
     <button class="bg-surface1 px-5 py-2 rounded-lg">{"<>"} Terminal</button>
   </nav>
 </header>
+<!-- class="fixed top-0 w-full lg:w-[1200px] h-20 flex items-center justify-between px-2 bg-surface0/30 backdrop-blur-sm backdrop-brightness-150 rounded-b-xl mb-10" -->
