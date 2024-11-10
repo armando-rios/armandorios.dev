@@ -1,0 +1,24 @@
+---
+import { Icon } from "astro-icon/components";
+import IconTitle from "./IconTitle.astro";
+import Tools from "./Tools.astro";
+---
+
+<section class="flex flex-col gap-4">
+  <IconTitle iconName="devtools" iconColor="text-green" title="Dev Tools" />
+  <Tools
+    title="Dev Setup"
+    desc="hola mi nombre es pepito"
+    type={["Bash", "Python"]}
+  />
+  <Tools
+    title="Dev Setup"
+    desc="hola mi nombre es pepito"
+    type={["Lua", "Neovim"]}
+  />
+  <Tools
+    title="Dev Setup"
+    desc="hola mi nombre es pepito"
+    type={["Powershell", "JSON"]}
+  />
+</section>

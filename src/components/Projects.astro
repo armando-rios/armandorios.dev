@@ -1,0 +1,34 @@
+---
+import IconTitle from "./IconTitle.astro";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="flex flex-col gap-4">
+  <IconTitle iconName="project" iconColor="text-sapphire" title="Projects" />
+  <div class="px-16 flex gap-4 flex-wrap">
+    <ProjectCard
+      color="blue"
+      title="hola"
+      desc="hi"
+      tecno={["React", "Tailwind", "Node.js"]}
+      links={["github", "link"]}
+      image="https://images.ctfassets.net/lzny33ho1g45/41O39Z8k4E7prE9ZWxAW32/4a1e95b14399ee52df902c3b7b34e332/image17.png"
+    />
+    <ProjectCard
+      color="peach"
+      title="hola"
+      desc="hi"
+      tecno={["React", "Tailwind", "Node.js"]}
+      links={["github", "link"]}
+      image="https://images.ctfassets.net/lzny33ho1g45/41O39Z8k4E7prE9ZWxAW32/4a1e95b14399ee52df902c3b7b34e332/image17.png"
+    />
+    <ProjectCard
+      color="green"
+      title="hola como estas"
+      desc="hi es una palabra usada en ingles para saludar"
+      tecno={["Astro", "Tailwind", "JavaScript"]}
+      links={["github", "link"]}
+      image="https://imgs.search.brave.com/wFpU24VVRGwQegfbOMZhhy_V7JPQFCjo5pFWX5jhuBs/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/em9ob3dlYnN0YXRp/Yy5jb20vc2l0ZXMv/endlYi9pbWFnZXMv/cHJvamVjdHMvbW9i/aWxlLXRlYW0vZXZl/cnlkYXktd29yay5w/bmc"
+    />
+  </div>
+</section>
