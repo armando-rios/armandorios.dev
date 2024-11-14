@@ -4,26 +4,31 @@ import { Icon } from "astro-icon/components";
 const { color, title, desc, tecno, image, links } = Astro.props;
 ---
 
-<div class="border rounded-lg border-surface0 w-[420px] h-[400px]">
-  <div class="h-[220px]">
-    <img src={image} class="w-full h-full object-contain rounded-t-lg" />
+<div
+  class="flex flex-col lg:w-[440px] lg:h-[560px] rounded-lg w-screen bg-surface0/10 backdrop-blur-sm backdrop-brightness-150"
+>
+  <div class="lg:h-[280px] lg:w-[440px]">
+    <img src={image} class="w-full h-full object-center rounded-t-lg" />
   </div>
   <div
-    class="border-l-4 bg-surface0 flex flex-col justify-between gap-2 p-4 rounded-b-lg h-[180px]"
-    style={`border-color: var(--${color});`}
+    class="border-b-4 flex flex-col justify-between gap-2 p-4 rounded-b-lg lg:h-[280px] lg:w-[440px]"
+    style={`border-color: var(--ctp-${color});`}
   >
     <h4 class="text-xl font-semibold">{title}</h4>
+    <div class="flex gap-2">
+      {
+        tecno.map((a: string) => (
+          <p class="px-2 text-xs py-1 rounded-md w-fit flex items-center gap-2">
+            <Icon name={a} />
+            {a}
+          </p>
+        ))
+      }
+    </div>
     <p class="text-subtext font-extralight">
       {desc}
     </p>
     <div class="flex flex-col gap-2">
-      <div class="flex gap-2">
-        {
-          tecno.map((a: string) => (
-            <p class="px-2 text-xs py-1 bg-surface1 rounded-md w-fit">{a}</p>
-          ))
-        }
-      </div>
       <div class="flex gap-4 text-2xl">
         <a href={links[0]}>
           <Icon
