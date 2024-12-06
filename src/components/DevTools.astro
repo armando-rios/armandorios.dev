@@ -1,24 +1,25 @@
 ---
-import { Icon } from "astro-icon/components";
 import IconTitle from "./IconTitle.astro";
 import Tools from "./Tools.astro";
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-8 mb-28">
   <IconTitle iconName="devtools" iconColor="text-green" title="Dev Tools" />
-  <Tools
-    title="Dev Setup"
-    desc="hola mi nombre es pepito"
-    type={["Bash", "Python"]}
-  />
-  <Tools
-    title="Dev Setup"
-    desc="hola mi nombre es pepito"
-    type={["Lua", "Neovim"]}
-  />
-  <Tools
-    title="Dev Setup"
-    desc="hola mi nombre es pepito"
-    type={["Powershell", "JSON"]}
-  />
+  <div class="flex flex-col gap-4">
+    <Tools
+      title="Dev Setup"
+      desc="Dev Environment script setup for fast setup your environment for develop."
+      type={["Bash", "Python"]}
+    />
+    <Tools
+      title="Neovim IDE"
+      desc="Full config neovim for javascript development fast and cuztomised"
+      type={["Lua", "Neovim"]}
+    />
+    <Tools
+      title="Fast Termianl"
+      desc="Terminal envoronment setup for cloud development, runs on wsl."
+      type={["Powershell", "JSON"]}
+    />
+  </div>
 </section>

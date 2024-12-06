@@ -4,12 +4,12 @@ const { title, desc, type } = Astro.props;
 ---
 
 <div
-  class="flex justify-between items-center px-16 py-6 text-lg border border-surface1 text-balance w-[60%] bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext"
+  class="flex max-md:flex-col max-md:gap-4 justify-between md:items-center px-16 py-6 text-lg border border-surface1 text-balance bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-4 rounded-lg text-subtext"
 >
-  <div>
+  <div class="flex flex-col gap-4">
     <h3 class="text-mauve font-semibold">{title}</h3>
     <p class="text-subtext">{desc}</p>
-    <div class="flex items-end gap-2">
+    <div class="hidden md:flex items-end gap-2">
       {
         type.map((a: string) => (
           <p class="bg-surface1 text-blue text-center rounded-xl w-fit px-3">
@@ -19,12 +19,18 @@ const { title, desc, type } = Astro.props;
       }
     </div>
   </div>
-  <div class="flex flex-col gap-2">
+  <div class="flex md:flex-col gap-2">
     <button
-      class="flex items-center gap-2 border border-surface1 px-4 py-2 rounded-lg h-fit"
+      class="w-36 flex items-center justify-center gap-2 border border-surface1 px-4 py-2 rounded-lg h-fit"
+    >
+      <Icon name="github" />
+      Github</button
+    >
+    <button
+      class="w-36 flex items-center justify-center gap-2 border border-surface1 px-4 py-2 rounded-lg h-fit"
     >
       <Icon name="doc" />
-      Documentation</button
+      Guide</button
     >
   </div>
 </div>

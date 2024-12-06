@@ -2,35 +2,60 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="flex flex-col gap-8 mt-48 mb-32 text-balance">
-  <h2 class="font-semibold text-5xl">Hey, soy Armando Rios</h2>
-  <h3 class="text-subtext text-xl">
-    Frontend Developer con experinecia en pryectos web, enfocado en
-    funcionalidad y rendimiento. Actualemente en el camino hacia el fullstack,
-    comprometido con la mejora constante, la creacion de herramientas para
-    optimizar el desarrollo y la aplicacion de buenas practicas de codigo
-  </h3>
-  <div class="flex gap-6 text-3xl text-subtext">
-    <a href=""
-      ><Icon name="github" class="text-mauve hover:scale-125 duration-300" /></a
-    >
-    <a href=""
-      ><Icon name="discord" class="text-blue hover:scale-125 duration-300" /></a
-    >
-    <a href=""
-      ><Icon
-        name="linkeding"
-        class="text-sky hover:scale-125 duration-300"
-      /></a
-    >
-    <a href=""
-      ><Icon name="x" class="text-green hover:scale-125 duration-300" /></a
-    >
+<section class="xl:flex">
+  <div
+    class="flex flex-col items-center justify-center xl:items-start text-center xl:text-start gap-8 h-[800px] px-2"
+  >
+    <h2 class="font-semibold text-5xl text-mauve">
+      Hi, I'm <span
+        class="text-peach drop-shadow-[0_0_8px_rgba(168,85,247,0.8)] animate-pulse"
+        >Armando Rios</span
+      >
+    </h2>
+    <h3 class="text-subtext text-2xl font-medium">
+      Frontend developer & UI/UX Enthusiast
+    </h3>
+    <p>
+      Crafting pixel-perfect experiences with a passion for clean code and
+      modern design principles. Specialized in React, Vue.js, and cutting-edge
+      frontend technologies.
+    </p>
+    <div class="flex gap-8 font-semibold text-lg">
+      <button class="w-44 h-14 px-4 py-2 rounded-lg bg-mauve text-black"
+        >Dowload CV</button
+      >
+      <button
+        class="w-44 h-14 px-4 py-2 rounded-lg border-2 border-mauve shadow-mauve shadow-md"
+        ><a href="#projects">View Projects</a></button
+      >
+    </div>
+    <div class="flex gap-6 text-3xl text-subtext">
+      <a href=""
+        ><Icon
+          name="github"
+          class="text-mauve hover:scale-125 duration-300"
+        /></a
+      >
+      <a href=""
+        ><Icon
+          name="discord"
+          class="text-blue hover:scale-125 duration-300"
+        /></a
+      >
+      <a href=""
+        ><Icon
+          name="linkeding"
+          class="text-sky hover:scale-125 duration-300"
+        /></a
+      >
+      <a href=""
+        ><Icon name="x" class="text-green hover:scale-125 duration-300" /></a
+      >
+    </div>
   </div>
-  <div class="flex gap-8 font-semibold text-lg">
-    <button class="px-4 py-2 rounded-lg bg-sky text-black">Descargar CV</button>
-    <button class="px-4 py-2 rounded-lg border border-subtext"
-      >Ver Proyectos</button
-    >
+  <div class="w-[50vw]">
+    <spline-viewer
+      url="https://prod.spline.design/GMgH00FWpyQcX6CY/scene.splinecode"
+    ></spline-viewer>
   </div>
 </section>

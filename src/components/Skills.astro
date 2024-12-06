@@ -1,72 +1,22 @@
 ---
 import { Icon } from "astro-icon/components";
 import IconTitle from "./IconTitle.astro";
-const iconDiv = "flex gap-4 flex-wrap w-64 ";
-const skills = [
-  "javascript",
-  "html",
-  "css",
-  "astro",
-  "react",
-  "tailwind",
-];
+import SkillsArea from "./SkillsArea.astro";
+const iconDiv = "flex gap-4 flex-wrap";
+const skills = ["javascript", "html", "css", "astro", "react", "tailwind"];
 const skills1 = ["node", "mongodb", "express", "graphql", "jwt"];
 const skills2 = ["git", "gith", "linux", "neovim", "bash"];
 const skills3 = ["rust", "lua", "typescript"];
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-8 mb-28">
   <div>
     <IconTitle iconName="dev" iconColor="text-peach" title="Skills" />
   </div>
-  <div class="flex gap-8 flex-wrap">
-    <div class="flex flex-col gap-4">
-      <p class="text-2xl text-yellow">Frontend</p>
-      <div class={iconDiv}>
-        {
-          skills.map((item: string) => (
-            <div class="flex text-3xl items-center gap-2 border border-surface1 bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-2 w-16 h-16 rounded-lg justify-center">
-              <Icon name={item} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="flex flex-col gap-4">
-      <p class="text-2xl text-yellow">Backend</p>
-      <div class={iconDiv}>
-        {
-          skills1.map((item: string) => (
-            <div class="flex text-3xl items-center gap-2 border border-surface1 bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-2 w-16 h-16 rounded-lg justify-center">
-              <Icon name={item} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="flex flex-col gap-4">
-      <p class="text-2xl text-yellow">Herramientas</p>
-      <div class={iconDiv}>
-        {
-          skills2.map((item: string) => (
-            <div class="flex text-3xl items-center gap-2 border border-surface1 bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-2 w-16 h-16 rounded-lg justify-center">
-              <Icon name={item} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
-    <div class="flex flex-col gap-4">
-      <p class="text-2xl text-yellow">Aprendiendo</p>
-      <div class={iconDiv}>
-        {
-          skills3.map((item: string) => (
-            <div class="flex text-3xl items-center gap-2 border border-surface1 bg-surface0/10 backdrop-blur-sm backdrop-brightness-150 p-2 w-16 h-16 rounded-lg justify-center">
-              <Icon name={item} />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+  <div class="flex gap-8 flex-wrap justify-start">
+    <SkillsArea skills={skills} title="Frontend" />
+    <SkillsArea skills={skills1} title="Backend" />
+    <SkillsArea skills={skills2} title="Tools" />
+    <SkillsArea skills={skills3} title="Learning" />
   </div>
 </section>

@@ -1,0 +1,18 @@
+---
+import { Icon } from "astro-icon/components";
+const iconDiv = "flex gap-4 flex-wrap ";
+const { skills, title } = Astro.props;
+---
+
+<div class="flex flex-col gap-4 md:w-[calc(50%-16px)]">
+  <p class="text-2xl text-yellow">{title}</p>
+  <div class={iconDiv}>
+    {
+      skills.map((item: string) => (
+        <div class="flex text-4xl items-center gap-2 p-2 w-16 h-16 rounded-lg justify-center border-surface1 border rounded-lg bg-surface0/10 backdrop-blur-sm backdrop-brightness-150">
+          <Icon name={item} />
+        </div>
+      ))
+    }
+  </div>
+</div>
