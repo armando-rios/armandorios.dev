@@ -22,7 +22,7 @@ const navItems: NavItem[] = [
 >
   <nav class="max-w-6xl mx-auto px-8 py-6">
     <div class="flex items-center justify-between">
-      <a href="/" class="font-mono text-4xl md:text-2xl font-bold">
+      <a href="/" class="text-4xl md:text-2xl font-bold">
         <span
           class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text"
         >
@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
           navItems.map((item) => (
             <li>
               <a href={item.href} class="relative group">
-                <span class="text-zinc-400 hover:text-white transition-colors duration-300 font-mono">
+                <span class="text-zinc-400 hover:text-white transition-colors duration-300">
                   {item.label}
                 </span>
                 <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-fuchsia-500 group-hover:w-full transition-all duration-300" />
@@ -48,7 +48,7 @@ const navItems: NavItem[] = [
       <button
         class="relative group px-4 py-2 border-2 border-zinc-800 rounded-sm overflow-hidden"
       >
-        <span class="relative z-10 font-mono text-sm"> RESUME </span>
+        <span class="relative z-10 text-sm"> RESUME </span>
         <div
           class="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"
         >
