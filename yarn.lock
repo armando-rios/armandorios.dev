@@ -351,15 +351,15 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.24.0.tgz#168ab1c7e1c318b922637fad8f339d48b01e1244"
   integrity sha512-7IAFPrjSQIJrGsK6flwg7NFmwBoSTyF3rl7If0hNUFQU4ilTsEPL6GuMuU9BfIWVVGuRnuIidkSMC+c0Otu8IA==
 
+"@fontsource/jetbrains-mono@^5.1.2":
+  version "5.1.2"
+  resolved "https://registry.yarnpkg.com/@fontsource/jetbrains-mono/-/jetbrains-mono-5.1.2.tgz#dcd74209b9aa5ba9f21eafaba09c8dd758333cde"
+  integrity sha512-muYZK6W3NTrKpKTjoF2dkrtMjXLlPZhniLiLjMmfegRibl2L6jUJh9gB6UcbcZs3zHdIYTmzMkXNbNoI2kXX3Q==
+
 "@fontsource/space-mono@^5.1.2":
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/@fontsource/space-mono/-/space-mono-5.1.2.tgz#ea3ed51b0078c4b5708373de3ee444687ed71c33"
   integrity sha512-4EtHA1IZQ8hI7Gyc0hP3gPEZUfet4oqUg722J8WD8TalHwxvsy5sNQw0i08TDMu5gZjkLOtp5wPVScx+l9iSiw==
-
-"@fontsource/vt323@^5.1.1":
-  version "5.1.1"
-  resolved "https://registry.yarnpkg.com/@fontsource/vt323/-/vt323-5.1.1.tgz#60fd784591d9078b78edfa1dd8f109a9458beed9"
-  integrity sha512-ZIxW1pXMVZ+qsff/3mVZ7NUpld9K05JKASH2G7glmD2CNLnZsHMz4UIwDM07gCQwWL67oe8ix+Rz9d9jiS6lWQ==
 
 "@iconify/tools@^4.0.5":
   version "4.1.1"
