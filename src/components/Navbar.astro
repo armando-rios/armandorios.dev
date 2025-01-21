@@ -1,0 +1,74 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface NavItem {
+  label: string;
+  href: string;
+  icon?: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "HOME", href: "#home" },
+  { label: "PROJECTS", href: "#projects" },
+  { label: "SKILLS", href: "#skills" },
+  { label: "TOOLS", href: "#tools" },
+  //{ label: "BLOG", href: "#blog" }
+  { label: "CONTACT", href: "#contact" },
+];
+---
+
+<header
+  class="fixed top-0 left-0 right-0 z-50 border-b-2 border-zinc-800 bg-zinc-900/50 backdrop-blur-md"
+>
+  <nav class="max-w-6xl mx-auto px-8 py-6">
+    <div class="flex items-center justify-between">
+      <a href="/" class="font-mono text-4xl md:text-2xl font-bold">
+        <span
+          class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text"
+        >
+          AR
+        </span>
+      </a>
+
+      <ul class="hidden md:flex items-center gap-8">
+        {
+          navItems.map((item) => (
+            <li>
+              <a href={item.href} class="relative group">
+                <span class="text-zinc-400 hover:text-white transition-colors duration-300 font-mono">
+                  {item.label}
+                </span>
+                <span class="absolute -bottom-2 left-0 w-0 h-0.5 bg-fuchsia-500 group-hover:w-full transition-all duration-300" />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <button
+        class="relative group px-4 py-2 border-2 border-zinc-800 rounded-sm overflow-hidden"
+      >
+        <span class="relative z-10 font-mono text-sm"> RESUME </span>
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-fuchsia-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-0"
+        >
+        </div>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<!-- Add this script tag if you want smooth scrolling -->
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+      const href = this.getAttribute("href");
+      if (!href) return;
+
+      document.querySelector(href)?.scrollIntoView({
+        behavior: "smooth",
+      });
+    });
+  });
+</script>
