@@ -1,0 +1,193 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface SocialLink {
+  name: string;
+  url: string;
+  icon: string;
+}
+
+const socialLinks: SocialLink[] = [
+  { name: "GitHub", url: "https://github.com", icon: "github" },
+  { name: "LinkedIn", url: "https://linkedin.com", icon: "linkedin" },
+  { name: "Twitter", url: "https://twitter.com", icon: "twitter" },
+];
+---
+
+<section class="relative min-h-screen flex items-center py-32" id="home">
+  <div class="absolute inset-0 pointer-events-none">
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_110%)]"
+    >
+    </div>
+  </div>
+
+  <div class="relative max-w-6xl mx-auto px-8 w-full">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="space-y-8 flex flex-col max-lg:items-center">
+        <div class="space-y-4 w-fit p-6">
+          <h1
+            class="text-4xl md:text-6xl font-bold relative text-center md:text-start flex flex-col gap-2"
+          >
+            <span
+              class="absolute -top-8 -left-8 w-16 h-16 border-t-2 border-l-2 border-fuchsia-500/50"
+            ></span>
+            <span>Armando Rios</span>
+            <div class="text-2xl max-lg:text-center md:text-4xl font-bold">
+              <span
+                class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text"
+              >
+                FULLSTACK DEVELOPER
+              </span>
+            </div>
+            <span
+              class="absolute -bottom-8 -right-8 w-16 h-16 border-b-2 border-r-2 border-cyan-500/50"
+            ></span>
+          </h1>
+        </div>
+
+        <!-- Description -->
+        <p
+          class="text-lg text-zinc-400 max-w-xl max-lg:text-center hidden md:block"
+        >
+          FullStack Developer focused on creating effective, high-impact web
+          experiences. My work centers on robust functionality and optimal
+          performance. Constantly evolving towards Full Stack, I stand out for
+          developing tools that optimize processes and implementing best coding
+          practices in every project.
+        </p>
+        <p class="text-lg text-zinc-400 max-w-xl max-lg:text-center md:hidden">
+          Frontend Dev building high-impact web experiences with performance &
+          best practices.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap gap-4 max-lg:justify-center">
+          <a href="#projects" class="group relative px-6 py-3 text-sm">
+            <span
+              class="absolute inset-0 border-2 border-fuchsia-500/50 group-hover:border-fuchsia-500 transition-colors duration-300"
+            ></span>
+            <span class="relative flex items-center gap-2">
+              <span
+                class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text group-hover:text-white transition-colors duration-300"
+              >
+                VIEW PROJECTS
+              </span>
+              <Icon
+                name="arrow-right"
+                class="w-4 h-4 text-fuchsia-500 group-hover:text-white group-hover:translate-x-1 transition-all duration-300"
+              />
+            </span>
+          </a>
+
+          <a
+            href="#contact"
+            class="group relative px-6 py-3 text-sm overflow-hidden"
+          >
+            <span
+              class="absolute inset-0 border-2 border-zinc-800 group-hover:border-cyan-500/50 transition-colors duration-300"
+            ></span>
+            <span
+              class="relative z-10 flex items-center gap-2 text-zinc-400 group-hover:text-white transition-colors duration-300"
+            >
+              GET IN TOUCH
+              <Icon name="email" class="w-4 h-4" />
+            </span>
+            <span
+              class="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-fuchsia-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            ></span>
+          </a>
+        </div>
+
+        <!-- Social Links -->
+        <div class="flex items-center gap-6 pt-4">
+          {
+            socialLinks.map(({ name, url, icon }) => (
+              <a
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="group relative"
+                aria-label={name}
+              >
+                <span class="absolute -inset-2 border-2 border-transparent group-hover:border-zinc-800 opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                <Icon
+                  name={icon}
+                  class="w-6 h-6 text-zinc-400 group-hover:text-white transition-colors duration-300"
+                />
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Visual Column -->
+      <div class="max-lg:hidden relative aspect-square w-full max-w-lg mx-auto">
+        {/* Decorative Code Blocks */}
+        <div class="absolute inset-0">
+          <pre
+            class="absolute top-0 left-0 text-[10px] text-zinc-600 bg-zinc-900/50 p-4 border border-zinc-800 transform -rotate-6 hover:rotate-0 transition-transform duration-300">
+            <code>{`function optimizeExperience() {
+  const design = new DesignSystem();
+  const code = new CleanArchitecture();
+  
+  return {
+    design,
+    code,
+    passion: true
+  };
+}`}</code>
+          </pre>
+
+          <pre
+            class="absolute bottom-0 right-0 text-[10px] text-zinc-600 bg-zinc-900/50 p-4 border border-zinc-800 transform rotate-6 hover:rotate-0 transition-transform duration-300">
+            <code>{`const stack = {
+  frontend: ['React', 'TypeScript'],
+  design: ['Figma', 'Tailwind'],
+  architecture: ['Clean Code', 'DDD'],
+  always: 'Learning'
+};`}</code>
+          </pre>
+        </div>
+
+        {/* Central Visual Element */}
+        <div
+          class="absolute inset-12 border-2 border-zinc-800 bg-zinc-900/50 backdrop-blur-sm"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-cyan-500/10"
+          >
+          </div>
+          <div class="absolute inset-0 grid place-items-center">
+            <div class="relative w-24 h-24">
+              <div
+                class="absolute inset-0 border-2 border-fuchsia-500/50 animate-[spin_8s_linear_infinite]"
+              >
+              </div>
+              <div
+                class="absolute inset-0 border-2 border-cyan-500/50 animate-[spin_8s_linear_infinite_reverse]"
+              >
+              </div>
+              <div
+                class="absolute inset-4 border-2 border-zinc-800 bg-zinc-900"
+              >
+              </div>
+              <Icon
+                name="code"
+                class="absolute inset-0 m-auto w-8 h-8 text-white/80"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll Indicator -->
+  <div
+    class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+  >
+    <span class="text-xs text-zinc-500">SCROLL</span>
+    <Icon name="arrow-down" class="w-4 h-4 text-zinc-500 animate-bounce" />
+  </div>
+</section>
