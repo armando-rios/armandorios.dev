@@ -73,26 +73,28 @@ const projects: Project[] = [
 
               {/* Content */}
               <div class="relative z-10">
-                <h3 class="text-2xl  font-bold mb-4">{project.title}</h3>
+                {/* Información principal que se desvanece en hover */}
+                <div class="transition-opacity duration-300 group-hover:opacity-0">
+                  <h3 class="text-2xl font-bold mb-4">{project.title}</h3>
+                  <p class="text-zinc-400 mb-6 line-clamp-3">
+                    {project.description}
+                  </p>
 
-                <p class="text-zinc-400 mb-6 line-clamp-3">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div class="flex flex-wrap gap-3 mb-8">
-                  {project.technologies.map((tech) => (
-                    <span class={`text-sm  ${tech.color}`}>{tech.name}</span>
-                  ))}
+                  {/* Tecnologías */}
+                  <div class="flex flex-wrap gap-3 mb-8">
+                    {project.technologies.map((tech) => (
+                      <span class={`text-sm ${tech.color}`}>{tech.name}</span>
+                    ))}
+                  </div>
                 </div>
 
-                {/* Links */}
-                <div class="flex items-center gap-4">
+                {/* Enlaces: siempre visibles */}
+                <div class="relative z-20 flex items-center gap-4">
                   <a
                     href={project.link}
-                    class="flex items-center gap-2 text-sm  group/link"
+                    class="flex items-center gap-2 text-sm group/link transition-colors duration-300"
                   >
-                    <span class="text-zinc-400 group-hover/link:text-white transition-colors duration-300">
+                    <span class="text-zinc-400 group-hover/link:text-white">
                       LIVE DEMO
                     </span>
                     <Icon
@@ -104,9 +106,9 @@ const projects: Project[] = [
                   {project.github && (
                     <a
                       href={project.github}
-                      class="flex items-center gap-2 text-sm  group/github"
+                      class="flex items-center gap-2 text-sm group/github transition-colors duration-300"
                     >
-                      <span class="text-zinc-400 group-hover/github:text-white transition-colors duration-300">
+                      <span class="text-zinc-400 group-hover/github:text-white">
                         SOURCE
                       </span>
                       <Icon
@@ -122,7 +124,7 @@ const projects: Project[] = [
               <div class="absolute inset-0 bg-gradient-to-br from-fuchsia-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             </div>
 
-            {/* Preview Image Overlay (optional) */}
+            {/* Preview Image Overlay */}
             <div class="absolute inset-0 bg-zinc-900/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none">
               <img
                 src={project.image}
