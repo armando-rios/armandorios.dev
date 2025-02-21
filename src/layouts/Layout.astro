@@ -7,11 +7,52 @@ const { title } = Astro.props;
 
 <html lang="en">
   <head>
+    <meta
+      name="description"
+      content="Frontend Developer con enfoque creciente en Backend. Creo experiencias web de alto impacto, evolucionando hacia Full Stack con herramientas óptimas y buenas prácticas."
+    />
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://armandorios.dev/" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- OPEN GRAPH (For social media previews: Facebook, LinkedIn, etc.) -->
+    <meta property="og:title" content="Armando Rios | Frontend Developer" />
+    <meta
+      property="og:description"
+      content="Frontend Developer with a growing focus on Backend. Building high-impact web experiences through robust functionality, performance optimization, and best coding practices."
+    />
+    <meta property="og:image" content="https://armandorios.dev/og-image.jpg" />
+    <meta property="og:url" content="https://armandorios.dev/" />
+    <meta property="og:type" content="website" />
+
+    <!-- TWITTER CARDS -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Armando Rios | Frontend Developer" />
+    <meta
+      name="twitter:description"
+      content="Frontend Developer with a growing focus on Backend. Building high-impact web experiences through robust functionality, performance optimization, and best coding practices."
+    />
+    <meta name="twitter:image" content="https://armadnorios.dev/og-image.jpg" />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Armando Rios",
+        "jobTitle": "Frontend Developer",
+        "url": "https://armandorios.dev/",
+        "sameAs": [
+          "https://www.linkedin.com/in/armando-rios-dev",
+          "https://github.com/armando-rios"
+        ],
+        "description": "Frontend Developer with a growing focus on Backend, building high-impact web experiences through robust functionality, performance optimization, and best coding practices."
+      }
+    </script>
   </head>
   <body class="bg-zinc-900 text-white">
     <Navbar />
