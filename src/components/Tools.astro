@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 interface Tool {
   title: string;
@@ -18,29 +18,31 @@ interface Tool {
 const tools: Tool[] = [
   {
     title: "TMUX PLUGIN",
-    description: "Tmux plugin with a minimalist and flexible configuration. Perfect for customizing your status bar with a stylish Powerline design and a soft color palette.",
+    description:
+      "Tmux plugin with a minimalist and flexible configuration. Perfect for customizing your status bar with a stylish Powerline design and a soft color palette.",
     icon: "share-2",
     gradient: "from-violet-500/20 to-purple-500/20",
     stats: [
       { value: "2.4K", label: "Downloads", icon: "download" },
       { value: "180+", label: "Stars", icon: "star" },
-      { value: "12", label: "Contributors", icon: "users" }
+      { value: "12", label: "Contributors", icon: "users" },
     ],
-    link: "https://github.com/yourusername/rapid-api",
-    technologies: ["Shell", "Tmux", "Catppuccin"]
+    link: "https://github.com/armando-rios/tmux",
+    technologies: ["Shell", "Tmux", "Catppuccin"],
   },
   {
     title: "DEV SETUP",
-    description: "Scripts and configuration files to quickly set up and standardize your development environment. ",
+    description:
+      "Scripts and configuration files to quickly set up and standardize your development environment. ",
     icon: "database",
     gradient: "from-emerald-500/20 to-teal-500/20",
     stats: [
       { value: "1.8K", label: "Users", icon: "users" },
       { value: "150+", label: "Stars", icon: "star" },
-      { value: "8", label: "Contributors", icon: "github" }
+      { value: "8", label: "Contributors", icon: "github" },
     ],
-    link: "https://github.com/yourusername/db-mapper",
-    technologies: ["Bash", "Powershell", "Git", "Node.js"]
+    link: "https://github.com/armando-rios/dev-setup",
+    technologies: ["Bash", "Powershell", "Git", "Node.js"],
   },
 ];
 ---
@@ -48,132 +50,147 @@ const tools: Tool[] = [
 <section class="py-28 relative" id="tools">
   <!-- Background Elements -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
-    <div class="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+    <div
+      class="absolute inset-0 bg-[linear-gradient(to_right,#18181b_1px,transparent_1px),linear-gradient(to_bottom,#18181b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
+    >
+    </div>
   </div>
 
   <div class="max-w-6xl mx-auto px-8">
     <!-- Section Header -->
     <div class="mb-16 relative">
-      <h2 class="text-4xl  font-bold mb-6 relative inline-block">
-        <span class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text">
+      <h2 class="text-4xl font-bold mb-6 relative inline-block">
+        <span
+          class="bg-gradient-to-r from-fuchsia-500 to-cyan-500 text-transparent bg-clip-text"
+        >
           DEVELOPER TOOLS
         </span>
-        <div class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500/40 to-cyan-500/40"></div>
+        <div
+          class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-fuchsia-500/40 to-cyan-500/40"
+        >
+        </div>
       </h2>
       <p class="text-zinc-400 text-lg max-w-2xl mt-8">
-        Open-source tools and utilities I've created to solve common development challenges
-        and streamline workflows.
+        Open-source tools and utilities I've created to solve common development
+        challenges and streamline workflows.
       </p>
     </div>
 
     <!-- Tools Grid -->
     <div class="grid grid-cols-1 gap-8">
-      {tools.map((tool) => (
-        <article class="group relative">
-          {/* Tool Card */}
-          <div class="relative border-2 border-zinc-800/80 p-8 md:p-12 bg-zinc-900/50 backdrop-blur-sm">
-            {/* Header */}
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
-              <div class="flex items-center gap-4">
-                <div class={`w-12 h-12 flex items-center justify-center border-2 border-zinc-800/80 rounded-sm 
-                            bg-gradient-to-br ${tool.gradient} transition-colors duration-300`}>
-                  <Icon 
-                    name={tool.icon} 
-                    class="w-6 h-6 text-white/70" 
-                  />
+      {
+        tools.map((tool) => (
+          <article class="group relative">
+            {/* Tool Card */}
+            <div class="relative border-2 border-zinc-800/80 p-8 md:p-12 bg-zinc-900/50 backdrop-blur-sm">
+              {/* Header */}
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-8">
+                <div class="flex items-center gap-4">
+                  <div
+                    class={`w-12 h-12 flex items-center justify-center border-2 border-zinc-800/80 rounded-sm 
+                            bg-gradient-to-br ${tool.gradient} transition-colors duration-300`}
+                  >
+                    <Icon name={tool.icon} class="w-6 h-6 text-white/70" />
+                  </div>
+                  <h3 class="text-2xl  font-bold">{tool.title}</h3>
                 </div>
-                <h3 class="text-2xl  font-bold">{tool.title}</h3>
+
+                <div class="flex flex-wrap gap-6">
+                  {tool.stats.map((stat) => (
+                    <div class="flex items-center gap-2">
+                      <Icon name={stat.icon} class="w-4 h-4 text-zinc-400" />
+                      <span class="">
+                        <span class="text-white/90">{stat.value}</span>
+                        <span class="text-zinc-500 text-sm ml-1">
+                          {stat.label}
+                        </span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              <div class="flex flex-wrap gap-6">
-                {tool.stats.map((stat) => (
-                  <div class="flex items-center gap-2">
-                    <Icon 
-                      name={stat.icon} 
-                      class="w-4 h-4 text-zinc-400" 
-                    />
-                    <span class="">
-                      <span class="text-white/90">{stat.value}</span>
-                      <span class="text-zinc-500 text-sm ml-1">{stat.label}</span>
-                    </span>
-                  </div>
+              {/* Description */}
+              <p class="text-lg text-zinc-400 mb-8 md:pr-24">
+                {tool.description}
+              </p>
+
+              {/* Technologies */}
+              <div class="flex flex-wrap gap-3 mb-8">
+                {tool.technologies.map((tech) => (
+                  <span class="px-3 py-1 bg-white/5 border border-zinc-800 text-sm  text-zinc-400">
+                    {tech}
+                  </span>
                 ))}
               </div>
-            </div>
 
-            {/* Description */}
-            <p class="text-lg text-zinc-400 mb-8 md:pr-24">
-              {tool.description}
-            </p>
-
-            {/* Technologies */}
-            <div class="flex flex-wrap gap-3 mb-8">
-              {tool.technologies.map((tech) => (
-                <span class="px-3 py-1 bg-white/5 border border-zinc-800 text-sm  text-zinc-400">
-                  {tech}
+              {/* Link */}
+              <a
+                href={tool.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2 text-sm group/link cursor-pointer"
+              >
+                <span class="text-zinc-400 group-hover/link:text-white transition-colors duration-300">
+                  VIEW PROJECT
                 </span>
-              ))}
-            </div>
+                <Icon
+                  name="arrow-right"
+                  class="w-4 h-4 text-zinc-400 group-hover/link:text-white group-hover/link:translate-x-1 transition-all duration-300"
+                />
+              </a>
 
-            {/* Link */}
-            <a 
-              href={tool.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 text-sm  group/link"
-            >
-              <span class="text-zinc-400 group-hover/link:text-white transition-colors duration-300">
-                VIEW PROJECT
-              </span>
-              <Icon 
-                name="arrow-right" 
-                class="w-4 h-4 text-zinc-400 group-hover/link:text-white group-hover/link:translate-x-1 transition-all duration-300" 
+              {/* Decorative Elements */}
+              <div
+                class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-zinc-800/50 -mt-2 -mr-2 
+                      transition-all duration-300 group-hover:border-white/20"
               />
-            </a>
-
-            {/* Decorative Elements */}
-            <div class="absolute top-0 right-0 w-32 h-32 border-t-2 border-r-2 border-zinc-800/50 -mt-2 -mr-2 
-                      transition-all duration-300 group-hover:border-white/20"></div>
-            <div class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-zinc-800/50 -mb-2 -ml-2 
-                      transition-all duration-300 group-hover:border-white/20"></div>
-          </div>
-
-          {/* Background Gradient */}
-          <div class={`absolute inset-0 bg-gradient-to-br ${tool.gradient} opacity-0 
-                      group-hover:opacity-10 transition-all duration-300 blur-xl`}></div>
-        </article>
-      ))}
+              <div
+                class="absolute bottom-0 left-0 w-32 h-32 border-b-2 border-l-2 border-zinc-800/50 -mb-2 -ml-2 
+                      transition-all duration-300 group-hover:border-white/20"
+              />
+            </div>
+          </article>
+        ))
+      }
     </div>
 
     {/* GitHub Profile Link */}
     <div class="mt-16 relative group">
-      <a 
+      <a
         href="https://github.com/armando-rios"
         target="_blank"
         rel="noopener noreferrer"
         class="block border-2 border-zinc-800/80 p-8 relative z-10 bg-zinc-900/50 backdrop-blur-sm"
       >
-        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-4"
+        >
           <div class="flex items-center gap-4">
-            <Icon 
-              name="github" 
-              class="w-8 h-8 text-zinc-400 group-hover:text-white transition-colors duration-300" 
+            <Icon
+              name="github"
+              class="w-8 h-8 text-zinc-400 group-hover:text-white transition-colors duration-300"
             />
             <div>
               <h3 class="text-xl font-bold mb-1">More Open Source Projects</h3>
-              <p class="text-zinc-400">Check out my GitHub profile for more tools and contributions</p>
+              <p class="text-zinc-400">
+                Check out my GitHub profile for more tools and contributions
+              </p>
             </div>
           </div>
-          <Icon 
-            name="arrow-right" 
-            class="w-6 h-6 text-zinc-400 group-hover:text-white group-hover:translate-x-2 transition-all duration-300" 
+          <Icon
+            name="arrow-right"
+            class="w-6 h-6 text-zinc-400 group-hover:text-white group-hover:translate-x-2 transition-all duration-300"
           />
         </div>
       </a>
 
       {/* Background Gradient */}
-      <div class="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 to-cyan-500/10 opacity-0 
-                  group-hover:opacity-10 transition-all duration-300 blur-xl"></div>
+      <div
+        class="absolute inset-0 bg-gradient-to-r from-fuchsia-500/10 to-cyan-500/10 opacity-0
+                  group-hover:opacity-10 transition-all duration-300 blur-xl"
+      >
+      </div>
     </div>
   </div>
 </section>
