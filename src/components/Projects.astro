@@ -31,6 +31,34 @@ const projects: Project[] = [
       { name: "Express.js", color: "text-gray-400" },
     ],
   },
+  {
+    title: "Task Manager",
+    description:
+      "A modern web application for task management with customizable themes. ",
+    image: "/task-manager.webp",
+    link: "https://armando-rios.github.io/task-manager/",
+    github: "https://github.com/armando-rios/task-manager",
+    featured: true,
+    technologies: [
+      { name: "JavaScript", color: "text-yellow-" },
+      { name: "Webpack", color: "text-green-400" },
+      { name: "Tailwindcss", color: "text-blue-400" },
+    ],
+  },
+  {
+    title: "Weather App",
+    description:
+      "A web application that provides real-time weather information for any location.",
+    image: "/weather-app.webp",
+    link: "https://armando-rios.github.io/weather-app/",
+    github: "https://github.com/armando-rios/weather-app",
+    featured: true,
+    technologies: [
+      { name: "JavaScript", color: "text-yellow-" },
+      { name: "Webpack", color: "text-green-400" },
+      { name: "Tailwindcss", color: "text-blue-400" },
+    ],
+  },
 ];
 ---
 
@@ -92,6 +120,7 @@ const projects: Project[] = [
                 <div class="relative z-20 flex items-center gap-4">
                   <a
                     href={project.link}
+                    target="_blank"
                     class="flex items-center gap-2 text-sm group/link transition-colors duration-300"
                   >
                     <span class="text-zinc-400 group-hover/link:text-white">
@@ -106,6 +135,7 @@ const projects: Project[] = [
                   {project.github && (
                     <a
                       href={project.github}
+                      target="_blank"
                       class="flex items-center gap-2 text-sm group/github transition-colors duration-300"
                     >
                       <span class="text-zinc-400 group-hover/github:text-white">
